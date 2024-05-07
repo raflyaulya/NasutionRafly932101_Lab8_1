@@ -21,7 +21,7 @@ namespace Lab_8_2
         {
 
             // Probability of events
-            double[] probabilities = { 0.1, 0.2, 0.3, 0.4 };
+            double[] probabilities = { 0.1, 0.2, 0.3, 0.4};
 
             // Initialize the random number generator
             Random random = new Random();
@@ -32,16 +32,16 @@ namespace Lab_8_2
             switch (eventIndex)
             {
                 case 0:
-                    ans.Text = ("Да");
+                    ans.Text = ("Yes");
                     break;
                 case 1:
-                    ans.Text = ("Нет");
+                    ans.Text = ("No");
                     break;
                 case 2:
-                    ans.Text = ("Возможно");
+                    ans.Text = ("Maybe");
                     break;
                 case 3:
-                    ans.Text = ("Не могу сейчас предсказать");
+                    ans.Text = ("I don't know");
                     break;
                 default:
                     ans.Text = ("Сосредоточьтесь и спросите снова");
@@ -51,15 +51,9 @@ namespace Lab_8_2
         }
         private int GetEventIndex(double[] probabilities, Random random)
         {
-            // Calculate the total probability,the sum of the probabilities of all events
-            double totalProbability = 0;
-            foreach (var probability in probabilities)
-            {
-                totalProbability += probability;
-            }
-
+            
             // Randomly generate a probability value
-            double randomValue = random.NextDouble() * totalProbability;
+            double randomValue = random.NextDouble();   // datchik
 
             // Calculate event number
             int eventIndex = 0;
